@@ -1,0 +1,18 @@
+1. has 2 types of worker: client-handle worker and polling-service worker. 
+
+2. assign one client-handle worker to each caller.
+
+3. hostname is localhost, and portNumber is 3000.
+
+Requirement for client-handle worker (CHW)
+1. has one worker N1 who sends updates to Clien.
+	1.1 sends updates on caller's interested services to the clients at the client's polling frequency.
+
+2. listens to any new caller's input via the socket.
+	2.1 based on the input, update SMS's ServiceToClientMap and ServiceToPollngFrequencyMap.
+	2.2 may add/update/remove clients from the above map.
+
+TrackServices:
+1. For each registered service,
+    make a worker to periodically check if it's still alive
+    update the status corresponds to that serviceName

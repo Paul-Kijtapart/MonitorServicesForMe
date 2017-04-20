@@ -1,0 +1,2 @@
+1. does NOT need to keep track of ServiceMonitor or any client.
+2. Ensures that for all connections, once connected, disconnect right after.

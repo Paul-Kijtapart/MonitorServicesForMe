@@ -1,0 +1,24 @@
+1. has 2 workers.
+the 1st worker listens to SMS
+and display any updates it reads from SMS
+
+and the 2nd worker listens to user's commands.
+	1.1 the 2nd worker is responsible for sending new commands to SMS.
+
+2. Command must be in the format of {"action": String, "data": {SA:2000}: Object}
+	2.1 Commands can be: "add", "update", "delete"
+	e.g.
+	{	"action" 	: "add",
+		"data"		: "{SA: 2000}"}
+	=> will overwrite the one on SMS if data already exists.
+
+	{	"action"	: "update",
+		"data"		: "{SA: 2000}"}
+	=> will append data if data already exists or else make new one on SMS if data not Exist.
+
+	{	"action"	: "remove",
+		"data"		: "{SA: 2000}"}
+	=> SA from its registered service on SMS.
+
+
+
